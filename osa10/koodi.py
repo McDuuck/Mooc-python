@@ -5,7 +5,7 @@ class Puhelinluettelo:
 
     def lisaa_numero(self, nimi: str, numero: str):
         if not nimi in self.__henkilot:
-            # henkilöön niittyy lista puhelinnumeroja
+           
             self.__henkilot[nimi] = []
         self.__henkilot[nimi].append(numero)
 
@@ -43,7 +43,7 @@ class PuhelinluetteloSovellus:
         self.__luettelo = Puhelinluettelo()
         self.__tiedosto = Tiedostonkasittelija("luettelo.txt")
 
-        # listään tiedostossa olevat nimet luetteloon
+        
         for nimi, numerot in self.__tiedosto.lataa().items():
             for numero in numerot:
                 self.__luettelo.lisaa_numero(nimi, numero)
@@ -87,6 +87,6 @@ class PuhelinluetteloSovellus:
             else:
                 self.ohje()
 
-# kun testaat, mitään muuta koodia ei saa olla luokkien ulkopuolella kuin seuraavat rivit
+
 sovellus = PuhelinluetteloSovellus()
 sovellus.suorita()
